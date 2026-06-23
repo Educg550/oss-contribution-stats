@@ -1,10 +1,8 @@
 import { env } from "./env";
-import type { RepoData } from "./types";
+import type { FetchInit, RepoData, RepoResp, SearchResp } from "./types";
 
 const REST = "https://api.github.com";
 const UA = "oss-card";
-
-type FetchInit = Omit<RequestInit, "headers"> & { headers?: Record<string, string> };
 
 export class GitHubError extends Error {
   constructor(
@@ -45,23 +43,6 @@ async function ghHead(path: string): Promise<Response> {
     },
   });
 }
-
-type SearchItem = {
-  number: number;
-  pull_request: { merged_at: string | null } | null;
-  repository_url: string;
-};
-type SearchResp = { items: SearchItem[]; total_count: number };
-
-type RepoResp = {
-  full_name: string;
-  html_url: string;
-  description: string | null;
-  stargazers_count: number;
-  forks_count: number;
-  language: string | null;
-  license: { spdx_id: string | null } | null;
-};
 
 async function fetchMergedPrSlugs(username: string): Promise<Map<string, number>> {
   const q = encodeURIComponent(`author:${username} is:pr is:merged -user:${username}`);

@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import satori from "satori";
 import { themes } from "./themes";
-import type { CardProps, RepoData } from "./types";
+import type { CardProps, RepoData, ThemeTokens } from "./types";
 
 const WIDTH = 495;
 
@@ -39,15 +39,7 @@ function formatLicense(license: string | null): string {
   return license.toUpperCase();
 }
 
-function RepoRow({
-  repo,
-  maxStars,
-  t,
-}: {
-  repo: RepoData;
-  maxStars: number;
-  t: import("./themes").ThemeTokens;
-}) {
+function RepoRow({ repo, maxStars, t }: { repo: RepoData; maxStars: number; t: ThemeTokens }) {
   const fill = maxStars > 0 ? Math.max(0.05, repo.stars / maxStars) : 0;
   return (
     <div style={{ display: "flex", flexDirection: "column", marginBottom: 14 }}>

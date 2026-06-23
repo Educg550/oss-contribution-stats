@@ -29,3 +29,36 @@ export type CardProps = {
   totalPrs: number;
   theme: ThemeName;
 };
+
+export type ThemeTokens = {
+  background: string;
+  title: string;
+  text: string;
+  accent: string;
+  bar: string;
+  star?: string;
+  starCount?: string;
+  license?: string;
+  barFill?: string;
+  lang?: string;
+};
+
+export type FetchInit = Omit<RequestInit, "headers"> & { headers?: Record<string, string> };
+
+export type SearchItem = {
+  number: number;
+  pull_request: { merged_at: string | null } | null;
+  repository_url: string;
+};
+
+export type SearchResp = { items: SearchItem[]; total_count: number };
+
+export type RepoResp = {
+  full_name: string;
+  html_url: string;
+  description: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  language: string | null;
+  license: { spdx_id: string | null } | null;
+};

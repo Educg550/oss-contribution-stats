@@ -1,17 +1,4 @@
-import type { ThemeName } from "./types";
-
-export type ThemeTokens = {
-  background: string;
-  title: string;
-  text: string;
-  accent: string;
-  bar: string;
-  star?: string;
-  starCount?: string;
-  license?: string;
-  barFill?: string;
-  lang?: string;
-};
+import type { ThemeName, ThemeTokens } from "./types";
 
 export const themes: Record<ThemeName, ThemeTokens> = {
   dark: {
