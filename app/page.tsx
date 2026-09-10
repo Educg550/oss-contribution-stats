@@ -18,12 +18,12 @@ export default function Home() {
         lineHeight: 1.5,
       }}
     >
-      <h1>oss-card</h1>
+      <h1>OSS Contribution Stats</h1>
       <p>Embeddable SVG card showing a GitHub user's upstream open-source contributions.</p>
 
       <h2>Usage</h2>
       <pre style={{ background: "#f4f4f5", padding: "0.75rem", borderRadius: 6, overflow: "auto" }}>
-        {`![OSS](https://oss-card-blush.vercel.app/api?username=YOUR_USERNAME)`}
+        {`![OSS](https://oss-contribution-stats.vercel.app/api?username=YOUR_USERNAME)`}
       </pre>
 
       <h2>Live examples</h2>

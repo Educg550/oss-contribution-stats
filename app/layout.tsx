@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "oss-card",
+  title: "OSS Contribution Stats",
   description: "Embeddable SVG card of GitHub upstream OSS contributions.",
 };
 

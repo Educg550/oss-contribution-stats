@@ -2,7 +2,7 @@ import { env } from "./env";
 import type { FetchInit, RepoData, RepoResp, SearchResp } from "./types";
 
 const REST = "https://api.github.com";
-const UA = "oss-card";
+const UA = "oss-contribution-stats";
 
 export class GitHubError extends Error {
   constructor(

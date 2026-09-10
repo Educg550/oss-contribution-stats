@@ -70,7 +70,7 @@ export async function GET(req: Request) {
       const extra: Record<string, string> = err.status === 429 ? { "Retry-After": "3600" } : {};
       return svgResponse(renderErrorCard(err.message, theme), err.status, extra);
     }
-    console.error("oss-card unhandled error", err);
+    console.error("oss-contribution-stats unhandled error", err);
     return svgResponse(renderErrorCard("Internal error", theme), 500);
   }
 }
