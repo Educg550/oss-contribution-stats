@@ -5,7 +5,7 @@ Embeddable SVG card showing a GitHub user's upstream open-source contributions, 
 ## Usage
 
 ```markdown
-![OSS Contributions](https://oss-card.vercel.app/api?username=YOUR_USERNAME)
+![OSS Contributions](https://oss-card-blush.vercel.app/api?username=YOUR_USERNAME)
 ```
 
 ### Options
@@ -20,7 +20,7 @@ Embeddable SVG card showing a GitHub user's upstream open-source contributions, 
 Example:
 
 ```markdown
-![OSS](https://oss-card.vercel.app/api?username=Educg550&theme=monokai&sort=forks&limit=3)
+![OSS](https://oss-card-blush.vercel.app/api?username=Educg550&theme=monokai&sort=forks&limit=3)
 ```
 
 ## Self-hosting
