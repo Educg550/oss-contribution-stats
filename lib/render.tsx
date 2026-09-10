@@ -53,12 +53,8 @@ function RepoRow({ repo, maxStars, t }: { repo: RepoData; maxStars: number; t: T
         <span style={{ color: t.accent, fontWeight: 700 }}>{repo.slug}</span>
         <span style={{ display: "flex", gap: 4 }}>
           <span style={{ color: t.star ?? t.text }}>★</span>
-          <span style={{ color: t.starCount ?? t.text }}>
-            {formatStars(repo.stars)}
-          </span>
-          <span style={{ color: t.license ?? t.text }}>
-            {formatLicense(repo.license)}
-          </span>
+          <span style={{ color: t.starCount ?? t.text }}>{formatStars(repo.stars)}</span>
+          <span style={{ color: t.license ?? t.text }}>{formatLicense(repo.license)}</span>
         </span>
       </div>
       <div
@@ -89,7 +85,7 @@ function RepoRow({ repo, maxStars, t }: { repo: RepoData; maxStars: number; t: T
       >
         <span style={{ color: t.lang ?? t.text }}>{repo.language ?? "—"}</span>
         <span>
-          👥 {formatStars(repo.contributors)} ↗ {repo.prCount}
+          {formatStars(repo.contributors)} contributors · {repo.prCount} PRs
         </span>
       </div>
     </div>
@@ -126,7 +122,7 @@ export async function renderCard(props: CardProps): Promise<string> {
           fontWeight: 700,
         }}
       >
-        ◈ OSS Contributions · @{props.username}
+        OSS Contributions · @{props.username}
       </div>
       <div
         style={{
@@ -138,12 +134,7 @@ export async function renderCard(props: CardProps): Promise<string> {
       />
       <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
         {props.repos.map((r) => (
-          <RepoRow
-            key={r.slug}
-            repo={r}
-            maxStars={maxStars}
-            t={t}
-          />
+          <RepoRow key={r.slug} repo={r} maxStars={maxStars} t={t} />
         ))}
       </div>
       <div
